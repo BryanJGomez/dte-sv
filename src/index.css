@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-base antialiased;
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-sans leading-relaxed min-h-screen;
+  }
+
+  a {
+    @apply text-primary no-underline;
+  }
+
+  button {
+    @apply font-sans cursor-pointer border-none outline-none transition-all duration-fast;
+    font-family: var(--font-sans);
+  }
+
+  input, select, textarea {
+    @apply font-sans outline-none;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md font-semibold tracking-tight whitespace-nowrap cursor-pointer border-none transition-all duration-fast;
+  }
+
+  .btn:disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-md {
+    @apply px-6 py-3 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-9 py-4 text-base font-bold;
+  }
+
+  .btn-full {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-btn disabled:hover:translate-y-0 disabled:hover:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-text-primary border border-border hover:bg-surface-hover;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-primary hover:bg-primary-light;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white hover:bg-red-700;
+  }
+
+  .btn-success {
+    @apply bg-success text-white hover:bg-green-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+
+  .badge-default {
+    @apply bg-border text-text-secondary;
+  }
+
+  .badge-primary {
+    @apply bg-primary-light text-primary;
+  }
+
+  .badge-success {
+    @apply bg-success-light text-success;
+  }
+
+  .badge-warning {
+    @apply bg-warning-light text-warning;
+  }
+
+  .form-field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .form-label {
+    @apply text-sm font-semibold text-text-primary;
+  }
+
+  .required {
+    @apply text-danger ml-0.5;
+  }
+
+  .hint {
+    @apply text-xs text-text-muted;
+  }
+
+  .error-msg {
+    @apply text-xs text-danger font-medium;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-border rounded-sm text-sm text-text-primary bg-surface transition-all duration-fast;
+  }
+
+  .input:focus {
+    @apply border-primary shadow-input-focus;
+  }
+
+  .input::placeholder {
+    @apply text-text-muted;
+  }
+
+  .input-error {
+    @apply border-danger;
+  }
+
+  .input-error:focus {
+    @apply shadow-input-error;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-lg shadow-sm;
+  }
+
+  .card-padded {
+    @apply p-5;
+  }
+
+  .divider {
+    @apply h-px bg-border-light my-1;
+  }
+
+  .spinner {
+    @apply w-5 h-5 border-2 border-border border-t-primary rounded-full animate-spin;
+  }
+
+  .empty-state {
+    @apply flex flex-col items-center text-center p-12 gap-2.5;
+  }
+
+  .empty-icon {
+    @apply text-4xl opacity-40 mb-1;
+  }
+
+  .empty-title {
+    @apply text-lg font-semibold text-text-secondary;
+  }
+
+  .empty-desc {
+    @apply text-sm text-text-muted max-w-[280px];
+  }
+
+  .text-mono {
+    @apply font-mono;
+  }
+
+  .container-center {
+    @apply max-w-[1280px] mx-auto px-4;
+  }
+}
+
+@layer utilities {
+  .shadow-input-focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  .shadow-input-error {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e4e7f0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
